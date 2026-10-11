@@ -1,0 +1,9 @@
+sample-id	forward-absolute-filepath	reverse-absolute-filepath
+2771670	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143785_1.fastq.gz	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143785_2.fastq.gz
+2571650	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143734_1.fastq.gz	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143734_2.fastq.gz
+2773651	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143786_1.fastq.gz	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143786_2.fastq.gz
+2547670	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143727_1.fastq.gz	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143727_2.fastq.gz
+2733650	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143778_1.fastq.gz	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143778_2.fastq.gz
+2071650	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143548_1.fastq.gz	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143548_2.fastq.gz
+2043650	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143536_1.fastq.gz	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143536_2.fastq.gz
+3053650	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143903_1.fastq.gz	/home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143903_2.fastq.gz

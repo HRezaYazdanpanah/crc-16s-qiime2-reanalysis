@@ -1,0 +1,5 @@
+
+# Local data, artifacts, and repair backups
+/data/
+/artifacts/
+/PLAN.md.before-repair*
