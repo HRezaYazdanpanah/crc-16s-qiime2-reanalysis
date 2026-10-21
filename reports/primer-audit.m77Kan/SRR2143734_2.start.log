@@ -1,0 +1,16 @@
+This is cutadapt 5.2 with Python 3.12.13
+Command line parameters: --action=none -e 0.1 -g ^GGACTACHVGGGTWTCTAAT -o /dev/null /home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143734_2.fastq.gz
+Processing single-end reads on 1 core ...
+
+=== Summary ===
+
+Total reads processed:                  27,485
+Reads with adapters:                         0 (0.0%)
+Reads written (passing filters):        27,485 (100.0%)
+
+Total basepairs processed:     6,898,735 bp
+Total written (filtered):      6,898,735 bp (100.0%)
+
+=== Adapter 1 ===
+
+Sequence: GGACTACHVGGGTWTCTAAT; Type: anchored 5'; Length: 20; Trimmed: 0 times

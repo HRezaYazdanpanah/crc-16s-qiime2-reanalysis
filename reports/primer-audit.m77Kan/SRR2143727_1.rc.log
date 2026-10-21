@@ -1,0 +1,52 @@
+This is cutadapt 5.2 with Python 3.12.13
+Command line parameters: --action=none -e 0.1 -O 12 -a ATTAGAWACCCBDGTAGTCC --info-file reports/primer-audit.m77Kan/SRR2143727_1.rc.tsv -o /dev/null /home/reza/qiime2-course/CRC-QIIME2/data/raw/pilot/SRR2143727_1.fastq.gz
+Processing single-end reads on 1 core ...
+
+=== Summary ===
+
+Total reads processed:                  17,776
+Reads with adapters:                       466 (2.6%)
+Reads written (passing filters):        17,776 (100.0%)
+
+Total basepairs processed:     4,461,776 bp
+Total written (filtered):      4,461,776 bp (100.0%)
+
+=== Adapter 1 ===
+
+Sequence: ATTAGAWACCCBDGTAGTCC; Type: regular 3'; Length: 20; Trimmed: 466 times
+
+Minimum overlap: 12
+No. of allowed errors:
+1-9 bp: 0; 10-19 bp: 1; 20 bp: 2
+
+Bases preceding removed adapters:
+  A: 3.2%
+  C: 5.8%
+  G: 4.9%
+  T: 5.6%
+  none/other: 80.5%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+116	2	0.0	2	0 0 2
+144	1	0.0	2	1
+146	1	0.0	2	0 0 1
+150	1	0.0	2	1
+212	1	0.0	2	0 0 1
+224	3	0.0	2	2 0 1
+229	5	0.0	2	4 1
+231	6	0.0	2	0 5 1
+233	1	0.0	2	1
+234	4	0.0	2	4
+236	3	0.0	2	2 1
+239	2	0.0	2	2
+241	4	0.0	2	0 4
+242	2	0.0	2	2
+243	3	0.0	2	3
+244	9	0.0	2	8 1
+245	3	0.0	2	3
+246	7	0.0	2	7
+248	2	0.0	2	2
+249	19	0.0	2	19
+250	12	0.0	2	11 1
+251	375	0.0	2	6 354 15

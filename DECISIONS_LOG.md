@@ -47,3 +47,23 @@ Confirm one Run accession per selected pilot sample.
 Review BioSample, Experiment and library information for
 multiple-run samples before choosing their processing rule.
 Do not report pilot findings as the main study results.
+
+### D03 — 2026-10-21 — pilot only
+- Evidence: all 8 pilot samples audited; no anchored expected-primer matches; paired read-through evidence detected.
+- Decision: no fixed 5-prime trimming; trim opposite-primer reverse complements at 3-prime ends.
+- Parameters: error-rate=0.1; overlap=12; minimum-length=1; pair-filter=any; retain untrimmed pairs; no quality trimming.
+- Review per-sample trimming/loss statistics before denoising. Main-cohort handling remains unresolved.
+
+### D04 — 2026-10-21 — pilot only
+- Use DADA2 denoise-paired: data-driven error learning, paired-end denoising/merging, and stage-wise retention statistics.
+### D05 — 2026-10-21 — initial pilot settings
+- trunc-len-f=240; trunc-len-r=200; trim-left-f=0; trim-left-r=0; max-ee-f=2; max-ee-r=2; min-overlap=12; pooling-method=independent; chimera-method=consensus.
+- Initial settings based on post-Cutadapt quality plots; not established as optimal. Inspect filtering and merging losses before accepting.
+### D06 — 2026-10-21 — pilot review rule
+- Flag any sample with non-chimeric pairs / DADA2 input pairs < 0.50 for technical review; no automatic sample exclusion. Input denominator is post-Cutadapt pairs.
+- Inspect losses at each stage without diagnosis grouping; report Cutadapt loss separately. Main-cohort settings remain unresolved.
+
+### Pilot review — D04–D06 — 2026-10-21
+- Retain 240/200 settings for continued pilot processing; no sample exclusion under D06.
+- Non-chimeric pairs: 286481 / 342927 post-Cutadapt input pairs (83.54%); per-sample retention 77.97–87.54%.
+- Largest aggregate loss occurred during filtering. Settings are acceptable for this pilot, not established as optimal or approved for the main cohort.
