@@ -1,0 +1,82 @@
+
+===== .ancombc2_core =====
+  67:     }
+  68:     beta_hat = para2$beta
+  69:     var_hat = para2$var_hat
+  70:     dof = para2$dof
+  71:     var_hat = sweep(var_hat, 2, var_delta, "+") + 2 * sqrt(sweep(var_hat, 2, var_delta, "*"))
+  72:     if (is.null(s0_perc)) {
+  73:         s02 = 0
+  86:         message("ANCOM-BC2 primary results ...")
+  87:     }
+  88:     W = beta_hat/se_hat
+  89:     p_hat = 2 * pt(abs(W), df = dof, lower.tail = FALSE)
+  90:     p_hat[is.na(p_hat)] = 1
+  91:     q_hat = apply(p_hat, 2, function(x) p.adjust(x, method = p_adj_method))
+  92:     diff_abn = q_hat <= alpha & !is.na(q_hat)
+ 109:             message("ANCOM-BC2 global test ...")
+ 110:         }
+ 111:         if (is.null(rand_formula)) {
+ 112:             res_global = .ancombc_global_F(x = x, group = group, beta_hat = beta_hat, vcov_hat = vcov_hat, dof = dof, p_adj_method = p_adj_method, 
+ 113:                 alpha = alpha)
+ 114:         }
+ 115:         else {
+ 126:         if (verbose) {
+ 127:             message("ANCOM-BC2 multiple pairwise comparisons ...")
+ 128:         }
+ 129:         res_pair = .ancombc_pair(x = x, group = group, beta_hat = beta_hat, var_hat = var_hat, vcov_hat = vcov_hat, dof = dof, 
+ 130:             fwer_ctrl_method = mdfdr_control$fwer_ctrl_method, alpha = alpha, full_model = para2$fits, fix_formula = fix_formula, 
+ 131:             rand_formula = rand_formula, control = lme_control, y = y_bias_crt, meta_data = meta_data)
+ 132:         beta_pair = data.frame(res_pair$beta, check.names = FALSE)
+ 152:         if (verbose) {
+ 153:             message("ANCOM-BC2 multiple pairwise comparisons against the reference group ...")
+ 154:         }
+ 155:         res_dunn = .ancombc_dunn(x = x, group = group, beta_hat = beta_hat, var_hat = var_hat, dof = dof, fwer_ctrl_method = mdfdr_control$fwer_ctrl_method, 
+ 156:             B = mdfdr_control$B, alpha = alpha)
+ 157:         beta_dunn = data.frame(res_dunn$beta, check.names = FALSE)
+ 158:         se_dunn = data.frame(res_dunn$se, check.names = FALSE)
+
+===== .iter_mle =====
+  13:             sep = "\n"))
+  14:         stop(stop_txt, call. = FALSE)
+  15:     }
+  16:     if (lm_smoke$df.residual == 0) {
+  17:         stop_txt = sprintf(paste("No residual degrees of freedom! The model is over-parameterized", "Please consider a more parsimonious model", 
+  18:             sep = "\n"))
+  19:         stop(stop_txt, call. = FALSE)
+  28:             }
+  29:             return(fit)
+  30:         })
+  31:         dof = NULL
+  32:         empty_coef = rep(NA, n_fix_eff)
+  33:         names(empty_coef) = fix_eff
+  34:         beta = lapply(fits, function(i) {
+ 128:             }
+ 129:             return(fit)
+ 130:         })
+ 131:         dof = vapply(fits, function(i) {
+ 132:             if (inherits(i, "lm")) {
+ 133:                 summary(i)$df[2]
+ 134:             }
+ 136:                 999L
+ 137:             }
+ 138:         }, FUN.VALUE = integer(1))
+ 139:         dof = matrix(rep(dof, n_fix_eff), ncol = n_fix_eff, byrow = FALSE)
+ 140:         empty_coef = rep(NA, n_fix_eff)
+ 141:         names(empty_coef) = fix_eff
+ 142:         beta = lapply(fits, function(i) {
+ 182:             var_hat[i, ] = diag(vcov_hat[[i]])
+ 183:         }
+ 184:     }
+ 185:     if (!is.null(dof)) {
+ 186:         colnames(dof) = fix_eff
+ 187:         rownames(dof) = tax_id
+ 188:     }
+ 189:     colnames(beta) = fix_eff
+ 190:     rownames(beta) = tax_id
+ 192:     names(vcov_hat) = tax_id
+ 193:     colnames(var_hat) = fix_eff
+ 194:     rownames(var_hat) = tax_id
+ 195:     output = list(dof = dof, beta = beta, theta = theta, vcov_hat = vcov_hat, var_hat = var_hat)
+ 196:     return(output)
+ 197: }

@@ -1,0 +1,99 @@
+ANCOMBC version: 2.12.0 
+
+===== FUNCTION: .ancombc_global_F =====
+  23:             }
+  24:             else {
+  25:                 p_global = 2 * min(pchisq(W_global, df = length(beta_hat_sub_i), lower.tail = TRUE), pchisq(W_global, df = length(beta_hat_sub_i), 
+  26:                   lower.tail = FALSE))
+  27:                 output[i, "W"] = W_global
+  28:                 output[i, "p_val"] = p_global
+
+===== FUNCTION: .ancombc_global_LRT =====
+  10:     reduce_formula = formula(paste0("y ~ ", reduce_fix_formula, "+ ", rand_formula))
+  11:     reduced_model = lapply(seq_len(n_tax), function(i) {
+  12:         df = data.frame(y = unlist(y[i, ]), meta_data)
+  13:         fit = try(suppressMessages(lmerTest::lmer(reduce_formula, data = df, control = control)), silent = TRUE)
+  14:         if (inherits(fit, "try-error")) {
+  15:             fit = NA
+
+===== FUNCTION: .ancombc2_core =====
+  87:     }
+  88:     W = beta_hat/se_hat
+  89:     p_hat = 2 * pt(abs(W), df = dof, lower.tail = FALSE)
+  90:     p_hat[is.na(p_hat)] = 1
+  91:     q_hat = apply(p_hat, 2, function(x) p.adjust(x, method = p_adj_method))
+  92:     diff_abn = q_hat <= alpha & !is.na(q_hat)
+
+===== FUNCTION: .bias_em =====
+  68:             l2_new = 0
+  69:         obj_kappa1 = function(x) {
+  70:             log_pdf = log(vapply(seq(n_tax), function(i) dnorm(beta[i], delta + l1, sqrt(nu0[i] + x)), FUN.VALUE = double(1)))
+  71:             log_pdf[is.infinite(log_pdf)] = 0
+  72:             -sum(r1i * log_pdf, na.rm = TRUE)
+  73:         }
+  74:         kappa1_new = nloptr::neldermead(x0 = kappa1, fn = obj_kappa1, lower = 0)$par
+  75:         obj_kappa2 = function(x) {
+  76:             log_pdf = log(vapply(seq(n_tax), function(i) dnorm(beta[i], delta + l2, sqrt(nu0[i] + x)), FUN.VALUE = double(1)))
+  77:             log_pdf[is.infinite(log_pdf)] = 0
+  78:             -sum(r2i * log_pdf, na.rm = TRUE)
+  79:         }
+
+===== FUNCTION: .dunn_global =====
+  11:     W_global_null = matrix(NA, nrow = n_tax, ncol = B)
+  12:     for (b in seq_len(B)) {
+  13:         W_null_b = matrix(unlist(apply(dof, seq_len(2), function(df) rt(1, df = df))), nrow = nrow(dof), ncol = ncol(dof))
+  14:         W_global_null_b = apply(W_null_b, 1, function(x) max(abs(x), na.rm = TRUE))
+  15:         W_global_null[, b] = W_global_null_b
+  16:     }
+
+===== FUNCTION: .iter_mle =====
+  22:         theta = rep(0, n_samp)
+  23:         fits = lapply(seq_len(n_tax), function(i) {
+  24:             df = data.frame(y_crt = unlist(y[i, ]) - theta, meta_data)
+  25:             suppressWarnings(fit <- try(stats::lm(tformula, data = df), silent = TRUE))
+  26:             if (inherits(fit, "try-error")) {
+  27:                 fit = NA
+  50:         while (epsilon > tol & iterNum < max_iter) {
+  51:             fits = lapply(seq_len(n_tax), function(i) {
+  52:                 df = data.frame(y_crt = unlist(y[i, ]) - theta, meta_data)
+  53:                 suppressWarnings(fit <- try(stats::lm(tformula, data = df), silent = TRUE))
+  54:                 if (inherits(fit, "try-error")) {
+  55:                   fit = NA
+ 122:     else {
+ 123:         fits = lapply(seq_len(n_tax), function(i) {
+ 124:             df = data.frame(y_crt = unlist(y[i, ]) - theta, meta_data)
+ 125:             suppressWarnings(fit <- try(stats::lm(tformula, data = df), silent = TRUE))
+ 126:             if (inherits(fit, "try-error")) {
+ 127:                 fit = NA
+
+===== FUNCTION: .iter_remle =====
+  30:         theta = rep(0, n_samp)
+  31:         fits = lapply(seq_len(n_tax), function(i) {
+  32:             df = data.frame(y_crt = unlist(y[i, ]) - theta, meta_data)
+  33:             fit = tryCatch({
+  34:                 suppressWarnings(suppressMessages(lmerTest::lmer(tformula, data = df, control = lme_control)))
+  35:             }, error = function(e) {
+  60:         while (epsilon > tol & iterNum < max_iter) {
+  61:             fits = lapply(seq_len(n_tax), function(i) {
+  62:                 df = data.frame(y_crt = unlist(y[i, ]) - theta, meta_data)
+  63:                 fit = tryCatch({
+  64:                   suppressWarnings(suppressMessages(lmerTest::lmer(tformula, data = df, control = lme_control)))
+  65:                 }, error = function(e) {
+ 142:     else {
+ 143:         fits = lapply(seq_len(n_tax), function(i) {
+ 144:             df = data.frame(y_crt = unlist(y[i, ]) - theta, meta_data)
+ 145:             fit = tryCatch({
+ 146:                 suppressWarnings(suppressMessages(lmerTest::lmer(tformula, data = df, control = lme_control)))
+ 147:             }, error = function(e) {
+
+===== FUNCTION: .mdfdr =====
+  17:     }
+  18:     R = sum(res_screen$diff_abn)
+  19:     p_val = 2 * (pt(abs(W), df = dof, lower.tail = FALSE))
+  20:     screen_ind = res_screen$diff_abn
+  21:     p_val = p_val * screen_ind
+  22:     p_val[p_val == 0] = 1
+  23:     p_val[is.na(p_val)] = 1
+  24:     n_tax = nrow(W)
+  25:     q_val = t(apply(p_val, 1, function(x) p.adjust(x, method = fwer_ctrl_method, n = length(x) * n_tax/R)))
+  26:     output = list(p_val = p_val, q_val = q_val)

@@ -1,0 +1,2 @@
+run_accession	library_layout	fastq_ftp	fastq_bytes	fastq_md5
+SRR2143609	PAIRED	ftp.sra.ebi.ac.uk/vol1/fastq/SRR214/009/SRR2143609/SRR2143609_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR214/009/SRR2143609/SRR2143609_2.fastq.gz	5195766;5532397	b1e181c237b97e3cc2da52fba8868ef6;a55550fd07095a0441ee6d7635fcb0ea

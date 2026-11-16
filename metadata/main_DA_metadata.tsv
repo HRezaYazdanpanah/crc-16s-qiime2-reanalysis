@@ -1,0 +1,82 @@
+sample-id	dx	Age	Gender	BMI	Site
+#q2:types	categorical	numeric	categorical	numeric	categorical
+2027653	normal	65	f	21.51385851	Toronto
+2033650	normal	77	m	21.70512943	Toronto
+2077653	normal	39	f	23.24340802	U Michigan
+2105652	normal	49	m	27.04164413	U Michigan
+2119650	normal	62	f	31.640625	U Michigan
+2145660	normal	62	m	27.17063157	U Michigan
+2151650	normal	48	m	26.64359862	U Michigan
+2161653	normal	55	f	17.92821543	U Michigan
+2163653	normal	51	f	21.30394858	U Michigan
+2165652	normal	55	f	20.07960128	Toronto
+2181650	normal	45	m	28.99406695	Toronto
+2193650	normal	72	m	22.34351559	U Michigan
+2215650	normal	35	m	23.66143862	Toronto
+2225650	normal	63	f	17.78197126	Toronto
+2255653	cancer	72	m	24.38237298	Dana Farber
+2267653	cancer	54	m	27.17063157	Dana Farber
+2279650	normal	62	m	39.54836372	Toronto
+2287660	cancer	64	m	22.83950617	Dana Farber
+2289650	normal	48	f	37.890625	Dana Farber
+2291653	cancer	75	f	28.1969212	U Michigan
+2305651	cancer	71	m	26.7755102	Dana Farber
+2309650	normal	42	f	23.14049587	Dana Farber
+2329650	normal	55	f	27.05380277	U Michigan
+2343650	cancer	72	m	30.83653053	Dana Farber
+2373690	cancer	80	f	30.10211858	Toronto
+2399670	cancer	78	m	25.21625331	Toronto
+2419660	cancer	68	m	26.64359862	Dana Farber
+2431660	cancer	62	m	25.81663021	MD Anderson
+2471651	cancer	61	f	20.79672989	Toronto
+2473660	normal	46	f	28.125	Toronto
+2507651	cancer	60	m	56.39152666	U Michigan
+2523653	cancer	37	m	35.11123879	MD Anderson
+2527670	cancer	53	m	30.24691358	MD Anderson
+2535652	cancer	69	m	26.2345679	MD Anderson
+2539660	cancer	52	m	34.42217362	Dana Farber
+2571650	cancer	64	f	16.22783886	Dana Farber
+2579680	cancer	55	m	57.46349378	Dana Farber
+2667653	cancer	58	m	29.68495643	MD Anderson
+2681650	normal	51	f	19.43301326	MD Anderson
+2703653	cancer	51	f	21.2244898	Dana Farber
+2709650	cancer	65	f	27.26800554	Toronto
+2739651	cancer	65	m	32.1799308	MD Anderson
+2769660	cancer	78	m	30.55555556	Toronto
+2779670	normal	69	f	18.66201469	Toronto
+2893660	cancer	74	m	35.16872936	U Michigan
+2955670	cancer	75	m	25.85463947	Dana Farber
+3005653	cancer	40	m	34.47809627	MD Anderson
+3013653	normal	50	f	19.605192	MD Anderson
+3021690	normal	54	m	31.60011491	MD Anderson
+3023652	normal	44	f	25.96952909	MD Anderson
+3049660	normal	51	f	28.40818411	MD Anderson
+3065652	cancer	60	m	35.13930223	MD Anderson
+3087661	normal	51	m	25.0995016	MD Anderson
+3095670	cancer	85	f	25.390625	Dana Farber
+3101650	normal	61	f	24.97704316	MD Anderson
+3111650	normal	55	f	35.29554952	Dana Farber
+3125660	normal	62	m	26.37023814	MD Anderson
+3137650	normal	59	m	24.16326531	U Michigan
+3155690	cancer	54	m	29.36576335	Dana Farber
+3159650	normal	51	f	21.4532872	Dana Farber
+3241660	normal	45	f	33.15043439	U Michigan
+3257660	normal	65	m	33.05785124	U Michigan
+3263650	cancer	78	m	29.88769472	Dana Farber
+3267660	cancer	61	m	24.38237298	Dana Farber
+3281670	cancer	75	f	49.75543937	U Michigan
+3291670	normal	63	f	32.8125	Dana Farber
+3301660	cancer	55	f	22.94811574	Dana Farber
+3317650	cancer	65	f	21.87242282	Dana Farber
+3335650	normal	53	f	25.4580659	Dana Farber
+3337650	cancer	58	m	31.79012346	MD Anderson
+3339680	normal	54	f	33.56401384	U Michigan
+3341680	normal	75	f	23.52941176	U Michigan
+3373660	cancer	80	f	28.71972318	Toronto
+3381650	cancer	69	m	35.83017847	U Michigan
+3385670	cancer	45	f	30.44982699	Dana Farber
+3431650	cancer	50	m	27.76979795	Dana Farber
+3477660	normal	56	f	24.89706023	MD Anderson
+3489670	cancer	49	f	31.02040816	Dana Farber
+3519670	normal	58	f	35.49786654	U Michigan
+3537650	normal	56	f	26.953125	U Michigan

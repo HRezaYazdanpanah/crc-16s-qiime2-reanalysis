@@ -1,0 +1,51 @@
+
+ dx values:
+
+cancer normal 
+    40     40 
+
+ Gender values:
+
+ f  m 
+40 40 
+
+ Site values:
+
+Dana Farber MD Anderson     Toronto  U Michigan 
+         26          18          15          21 
+
+ Age invalid supplied values:
+< table of extent 0 >
+
+ BMI invalid supplied values:
+< table of extent 0 >
+
+BMI missing/invalid percent: overall
+[1] 0
+
+BMI missing/invalid percent: by dx
+normal cancer 
+     0      0 
+
+SAMPLE SET: all n= 80 
+        
+         Dana Farber MD Anderson Toronto U Michigan
+  normal           6           9       9         16
+  cancer          20           9       6          5
+
+SAMPLE SET: primary_complete n= 80 
+        
+         Dana Farber MD Anderson Toronto U Michigan
+  normal           6           9       9         16
+  cancer          20           9       6          5
+
+SAMPLE SET: noBMI_complete n= 80 
+        
+         Dana Farber MD Anderson Toronto U Michigan
+  normal           6           9       9         16
+  cancer          20           9       6          5
+
+PRIMARY MODEL DESIGN CHECK
+Columns: 8 Rank: 8 Residual df: 72 
+
+COMPLETE: metadata audit only; no association tests fitted.

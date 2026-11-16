@@ -1,0 +1,6 @@
+genus_label	lfc	se	p	q_family_BH	passed_ss	direction	status
+Fusobacterium	-0.0844239648	0.7529852222	0.9121236071	1	False	lower_in_cancer	numerically_evaluable
+Parvimonas	2.7201433214	0.7607669412	0.0050491082	0.025245541	False	higher_in_cancer	numerically_evaluable
+Peptostreptococcus	0.1209995854	0.78049386	0.8843064014	1	True	higher_in_cancer	numerically_evaluable
+Porphyromonas	1.216570417	0.8004236995	0.1524764469	0.38119111725	False	higher_in_cancer	numerically_evaluable
+Solobacterium							not_evaluable_prevalence_7_of_80

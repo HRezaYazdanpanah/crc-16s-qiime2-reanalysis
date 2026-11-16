@@ -1,5 +1,28 @@
-
-# Local data, artifacts, and repair backups
+# Raw reads and QIIME 2 artifacts: large, and rebuilt by the scripts
 /data/
 /artifacts/
+/work/
+/logs/
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.qza
+*.qzv
+*.part
+
+# Third-party source tables: get them from the links in metadata/README.md
+/metadata/original/
+
+# Local leftovers
 /PLAN.md.before-repair*
+*.backup.*
+__pycache__/
+*.pyc
+/reports/less-help-local.txt
+# Copy of a file from the original authors' repository (linked in metadata/README.md)
+/reports/original_analysis_workflow.md
+# Pilot primer-audit tables
+/reports/primer-audit.*/*.tsv
+/prepublish_review*
+*.zip
